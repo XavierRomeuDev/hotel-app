@@ -24,7 +24,7 @@ function Information({ hotel, detailsPage }: IProps) {
             <p className="region">{hotel.region}</p>
           </div>
           <div className="highlights-price">
-            <h2 className="per-night">€{hotel.perNight}</h2>
+            <h2 className="per-night">{hotel.perNight}</h2>
             <p>per night</p>
           </div>
         </div>
@@ -34,10 +34,10 @@ function Information({ hotel, detailsPage }: IProps) {
       <div className="description">
         <span className="reviews">
           <strong className="review-number">{hotel.stars} stars</strong> (based
-          on {hotel.review} reviews)
+          on {hotel.reviews} reviews)
         </span>
         <hr />
-        <span className="feature">Main Feature: {hotel?.feature}</span>
+        <span className="feature">Main Feature: {hotel?.features}</span>
         {detailsPage ? (
           <>
             <p className="description-text">
@@ -48,6 +48,7 @@ function Information({ hotel, detailsPage }: IProps) {
               >
                 Edit Description
               </strong>
+              
               {editDescription ? (
                 <Edit
                   editDescription={editDescription}
@@ -55,15 +56,20 @@ function Information({ hotel, detailsPage }: IProps) {
                   id={hotel.id}
                 />
               ) : null}
+              
             </p>
+            
             <button onClick={() => deleteHotel(hotel.id, navigate)}>
               Delete Hotel
             </button>
           </>
         ) : (
-          <Link to={`/hotels/${hotel.id}`}>
-            <button className="moreinfo-btn">View More Information</button>
-          </Link>
+          <>
+            <br />
+            <Link to={`/hotels/${hotel.id}`}>
+              <button className="moreinfo-btn">View More Information</button>
+            </Link>
+          </>
         )}
       </div>
     </div>

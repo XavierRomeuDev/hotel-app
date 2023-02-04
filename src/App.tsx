@@ -1,14 +1,10 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import React, { Suspense } from "react";
-//import { QueryClient, QueryClientProvider } from "react-query";
-//import { ReactQueryDevtools } from "react-query/devtools";
-const Card = React.lazy(() => import("./components/Card"));
-const Create = React.lazy(() => import("./components/Create"));
-//const Destinations = React.lazy(() => import("./components/Destinations"));
-const Details = React.lazy(() => import("./components/Details"));
-const NotFound = React.lazy(() => import("./components/NotFound"));
-//const ReactQueryDestinations = React.lazy(() => import("./components/ReactQueryDestinations"));
+import React from "react";
+import Details from './components/Details';
+import Create from './components/Create';
+import NotFound from './components/NotFound';
+import Card from './components/Card';
 
 function App() {
   return (

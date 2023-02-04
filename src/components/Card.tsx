@@ -1,4 +1,4 @@
-import { doc, DocumentData, onSnapshot, QuerySnapshot } from "firebase/firestore";
+import { DocumentData, onSnapshot, QuerySnapshot } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { hotelsCollection } from "../lib/controller";
 import { NewHotelType } from "../types/hotel";
